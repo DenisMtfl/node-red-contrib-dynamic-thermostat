@@ -2,6 +2,8 @@
   "name": "thermostat",
   "version": "0.0.1",  
   "description": "Simple Thermostat",
+  "author": "Denis Manteufel <denis.manteufel@gmail.com>",
+  "license": "MIT",
   "main": "thermostat.js",
   "scripts": {
     "start": "nodemon /usr/lib/node_modules/node-red/red.js",
@@ -13,8 +15,16 @@
     "check-master": "npm outdated",
     "update-master": "npm update"    
   },
-  "author": "Denis Manteufel <denis.manteufel@gmail.com>",
-  "license": "MIT",
+  "keywords": [
+        "node-red",
+        "trigger",        
+        "hysteresis",
+        "thermostat",
+        "heating",
+        "cooling",        
+        "controller",
+        "on-off"
+    ],  
   "node-red" : {
     "nodes": {
         "thermostat": "thermostat.js"
