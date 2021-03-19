@@ -1,9 +1,9 @@
 {
   "name": "thermostat",
-  "version": "0.0.1",  
+  "version": "0.0.1",
   "description": "Dynamic Thermostat",
   "author": "Denis Manteufel <denis.manteufel@gmail.com>",
-  "license": "MIT",  
+  "license": "MIT",
   "scripts": {
     "start": "nodemon /usr/lib/node_modules/node-red/red.js",
     "inspect": "node --inspect --preserve-symlinks --experimental-modules /usr/lib/node_modules/node-red/red.js",
@@ -13,26 +13,32 @@
     "update-data": "cd data && npm update",
     "check-master": "npm outdated",
     "update-master": "npm update",
-     "lint": "standard src/**/*.js"
+    "lint": "standard src/**/*.js"
   },
   "devDependencies": {
-    "mocha": "^8.2.1",    
+    "mocha": "^8.2.1",
     "node-red": "^1.2.6",
-    "node-red-node-test-helper": "^0.2.5"
+    "node-red-node-test-helper": "^0.2.5",
+    "standard": "^16.0.3"
   },
   "keywords": [
-        "node-red",
-        "trigger",        
-        "hysteresis",
-        "thermostat",
-        "heating",
-        "cooling",        
-        "controller",
-        "on-off"
-    ],  
-  "node-red" : {
+    "node-red",
+    "trigger",
+    "hysteresis",
+    "thermostat",
+    "heating",
+    "cooling",
+    "controller",
+    "on-off"
+  ],
+  "node-red": {
     "nodes": {
-        "thermostat": "src/thermostat.js"
+      "thermostat": "src/thermostat.js"
+    }
+  },
+  "standard": {
+    "env": {
+      "mocha": false
     }
   }
 }
