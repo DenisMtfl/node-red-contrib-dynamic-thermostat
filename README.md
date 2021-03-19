@@ -33,3 +33,7 @@ The output is a object in the payload as following:
       hysteresis: 0.3
     }
 
+## Example Flow
+
+
+    [{"id":"7c89a60c.c53b78","type":"tab","label":"Flow 1","disabled":false,"info":""},{"id":"3bca5a6f.b51676","type":"inject","z":"7c89a60c.c53b78","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"target","payload":"20","payloadType":"str","x":230,"y":180,"wires":[["7382ac40.df0f54"]]},{"id":"6717a2da.fcd2ec","type":"debug","z":"7c89a60c.c53b78","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":670,"y":220,"wires":[]},{"id":"485cee9b.051ff","type":"inject","z":"7c89a60c.c53b78","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"current","payload":"21","payloadType":"str","x":220,"y":240,"wires":[["7382ac40.df0f54"]]},{"id":"9ffdf3df.750a7","type":"inject","z":"7c89a60c.c53b78","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"hysteresis","payload":"0.3","payloadType":"str","x":230,"y":300,"wires":[["7382ac40.df0f54"]]},{"id":"7382ac40.df0f54","type":"dynamic thermostat","z":"7c89a60c.c53b78","name":"","x":460,"y":220,"wires":[["6717a2da.fcd2ec"]]}]
