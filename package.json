@@ -13,7 +13,8 @@
     "check-data": "cd data && npm outdated",
     "update-data": "cd data && npm update",
     "check-master": "npm outdated",
-    "update-master": "npm update"    
+    "update-master": "npm update",
+     "lint": "standard src/**/*.js test/**/*.js",
   },
   "devDependencies": {
     "mocha": "^8.2.1",    
@@ -32,7 +33,7 @@
     ],  
   "node-red" : {
     "nodes": {
-        "thermostat": "thermostat.js"
+        "thermostat": "src/thermostat.js"
     }
   }
 }
