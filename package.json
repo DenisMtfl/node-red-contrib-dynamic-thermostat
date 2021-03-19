@@ -13,7 +13,7 @@
     "update-data": "cd data && npm update",
     "check-master": "npm outdated",
     "update-master": "npm update",
-     "lint": "standard src/**/*.js test/**/*.js"
+     "lint": "standard src/**/*.js"
   },
   "devDependencies": {
     "mocha": "^8.2.1",    
