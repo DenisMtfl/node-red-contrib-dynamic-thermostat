@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [     
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Node-red",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run-script", "inspect"],
+        "env": {
+          "NO_UPDATE_NOTIFIER": "1"          
+        },        
+      }      
+    ]
+  }
