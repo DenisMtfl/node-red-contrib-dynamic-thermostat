@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    RED.nodes.registerType('thermostat',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            //target: {required:true, validate:RED.validators.typedInput('changeValueType')},
+            //targetType: { required: true },
+            //hysteresis: {required:true, validate:RED.validators.regex("^\d+(\.\d{1,1})?$")}
+        },        
+        inputs:1,
+        inputLabels: "2 input temperatures and 1 hysteresis with desired topic as described in documentation",
+
+        outputs:1,
+        outputLabels: ["output a result-object described in the documentation"],
+
+        icon: "font-awesome/fa-thermometer-half",
+        label: function() {
+            return this.name||"Thermostat";
+        },
+        oneditprepare: function() {
+            // $("#node-input-target").typedInput({
+            //     default:"str",
+            //     types:["str", "msg", "flow","global", "json"],
+            //     typeField: "#node-input-targetType"
+            // })
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="thermostat">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <!-- 
+    <div class="form-row">
+        <label for="node-input-target"><i class="fa fa-tag"></i> Target temp.</label>
+        <input type="text" id="node-input-target">
+        <input type="hidden" id="node-input-targetType">
+    </div>
+    -->
+
+    <!-- <div class="form-row">
+        <label for="node-input-hysteresis"><i class="fa fa-tag"></i> Hysteresis</label>
+        <input type="text" id="node-input-hysteresis">
+    </div> -->
+</script>
+
+<script type="text/html" data-help-name="thermostat">
+    <p>A dynamic thermostat</p>
+</script>

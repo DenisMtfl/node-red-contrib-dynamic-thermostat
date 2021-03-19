@@ -1,0 +1,23 @@
+{
+  "name": "thermostat",
+  "version": "0.0.1",
+  "description": "Simple Thermostat",
+  "main": "thermostat.js",
+  "scripts": {
+    "start": "nodemon /usr/lib/node_modules/node-red/red.js",
+    "inspect": "node --inspect --preserve-symlinks --experimental-modules /usr/lib/node_modules/node-red/red.js",
+    "update": "npm install --unsafe-perm --production node-red",
+    "check": "npm outdated",
+    "check-data": "cd data && npm outdated",
+    "update-data": "cd data && npm update",
+    "check-master": "npm outdated",
+    "update-master": "npm update"    
+  },
+  "author": "Denis Manteufel",
+  "license": "MIT",
+  "node-red" : {
+    "nodes": {
+        "thermostat": "thermostat.js"
+    }
+  }
+}
