@@ -1,10 +1,9 @@
 {
   "name": "thermostat",
   "version": "0.0.1",  
-  "description": "Simple Thermostat",
+  "description": "Dynamic Thermostat",
   "author": "Denis Manteufel <denis.manteufel@gmail.com>",
-  "license": "MIT",
-  "main": "thermostat.js",
+  "license": "MIT",  
   "scripts": {
     "start": "nodemon /usr/lib/node_modules/node-red/red.js",
     "inspect": "node --inspect --preserve-symlinks --experimental-modules /usr/lib/node_modules/node-red/red.js",
