@@ -55,5 +55,5 @@ module.exports = function (RED) {
     return null
   }
 
-  RED.nodes.registerType('thermostat', Thermostat)
+  RED.nodes.registerType('dynamic thermostat', Thermostat)
 }
