@@ -1,6 +1,6 @@
 {
   "name": "thermostat",
-  "version": "0.0.1",
+  "version": "0.0.1",  
   "description": "Simple Thermostat",
   "main": "thermostat.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "check-master": "npm outdated",
     "update-master": "npm update"    
   },
-  "author": "Denis Manteufel",
+  "author": "Denis Manteufel <denis.manteufel@gmail.com>",
   "license": "MIT",
   "node-red" : {
     "nodes": {
