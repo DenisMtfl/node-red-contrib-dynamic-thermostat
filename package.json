@@ -1,5 +1,5 @@
 {
-  "name": "thermostat",
+  "name": "node-red-contrib-dynamic-thermostat",
   "version": "0.0.1",
   "description": "Dynamic Thermostat",
   "author": "Denis Manteufel <denis.manteufel@gmail.com>",
