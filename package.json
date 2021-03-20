@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-dynamic-thermostat",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Dynamic Thermostat",
   "author": "Denis Manteufel <denis.manteufel@gmail.com>",
   "license": "MIT",
@@ -15,6 +15,14 @@
     "update-master": "npm update",
     "lint": "standard src/**/*.js"
   },
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/DenisMtfl/node-red-contrib-dynamic-thermostat"
+	},
+  "bugs": {
+		"url": "https://github.com/DenisMtfl/node-red-contrib-dynamic-thermostat/issues"
+	},
+	"homepage": "https://github.com/DenisMtfl/node-red-contrib-dynamic-thermostat#readme",
   "devDependencies": {
     "mocha": "^8.2.1",
     "node-red": "^1.2.6",
@@ -29,7 +37,9 @@
     "heating",
     "cooling",
     "controller",
-    "on-off"
+    "on-off",
+    "temperature",
+    "dynamic"
   ],
   "node-red": {
     "nodes": {
