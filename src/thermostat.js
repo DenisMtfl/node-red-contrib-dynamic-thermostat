@@ -34,9 +34,9 @@ module.exports = function (RED) {
       if (node.current !== undefined && node.target !== undefined && node.hysteresis !== undefined) {
         statusColor = 'green'
         if(node.switch === false)                
-          result = Calc(node.current, node.target, node.hysteresis);        
+          result = Calc(node.current, node.target, node.hysteresis)
         else
-          return true;
+          return true
       }
 
       this.status({ fill: statusColor, shape: 'dot', text: `Current: ${node.current}  Target: ${node.target} Hysteresis: ${node.hysteresis} Switch: ${node.switch}` })
