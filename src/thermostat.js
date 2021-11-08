@@ -14,6 +14,7 @@ module.exports = function (RED) {
       node.target = null
       node.current = null
       node.hysteresis = null
+      node.switch = false
 
       if (msg.topic === 'target') {
         node.context.set('target', msg.payload)
@@ -25,16 +26,20 @@ module.exports = function (RED) {
         node.context.set('hysteresis', msg.payload)
       }
 
+      node.switch = node.context.get('switch')
       node.target = node.context.get('target')
       node.current = node.context.get('current')
       node.hysteresis = node.context.get('hysteresis')
 
       if (node.current !== undefined && node.target !== undefined && node.hysteresis !== undefined) {
         statusColor = 'green'
-        result = Calc(node.current, node.target, node.hysteresis)
+        if(node.switch === false)                
+          result = Calc(node.current, node.target, node.hysteresis);        
+        else
+          return true;
       }
 
-      this.status({ fill: statusColor, shape: 'dot', text: `Current: ${node.current}  Target: ${node.target} Hysteresis: ${node.hysteresis}` })
+      this.status({ fill: statusColor, shape: 'dot', text: `Current: ${node.current}  Target: ${node.target} Hysteresis: ${node.hysteresis} Switch: ${node.switch}` })
       msg = { payload: { onoff: result, current: node.current, target: node.target, hysteresis: node.hysteresis } }
       node.send(msg)
     })
