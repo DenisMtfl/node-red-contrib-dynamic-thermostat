@@ -33,12 +33,10 @@ module.exports = function (RED) {
 
       if (node.current !== undefined && node.target !== undefined && node.hysteresis !== undefined) {
         statusColor = 'green'
-        if(node.switch === false) 
-        {               
+        if(node.switch === false) {               
           result = Calc(node.current, node.target, node.hysteresis)
         }
-        else
-        {
+        else {
           return true
         }
       }
