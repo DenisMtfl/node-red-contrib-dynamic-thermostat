@@ -14,7 +14,9 @@ module.exports = function (RED) {
       node.target = null
       node.current = null
       node.hysteresis = null
-      node.switch = false
+      node.switch = null
+
+      node.context.set('switch', true)
 
       if (msg.topic === 'target') {
         node.context.set('target', msg.payload)
@@ -34,6 +36,10 @@ module.exports = function (RED) {
       node.current = node.context.get('current')
       node.hysteresis = node.context.get('hysteresis')
 
+      node.target = parseFloat(node.target).toFixed(2)
+      node.current = parseFloat(node.current).toFixed(2)
+      node.hysteresis = parseFloat(node.hysteresis).toFixed(2)
+
       if (node.current !== undefined && node.target !== undefined && node.hysteresis !== undefined) {
         statusColor = 'green'
         if (node.switch === false) {
@@ -51,12 +57,12 @@ module.exports = function (RED) {
 
   function Calc (current, target, hysteresis) {
     // Heater on
-    if (current < target - hysteresis) {
+    if (current < (target - hysteresis)) {
       return true
     }
 
     // Heater off
-    if (current > target + hysteresis) {
+    if (current > (target + hysteresis)) {
       return false
     }
 
