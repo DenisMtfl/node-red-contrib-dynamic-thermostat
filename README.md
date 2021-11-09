@@ -12,13 +12,14 @@ This node requires node 10.x+.
     $ cd ~/.node-red
     $ npm install node-red-contrib-dynamic-thermostat
 
-# Configuration
+# Configurations
 
-The node has 1 input with `(3 topic-payloads)` and 1 output `(object with 4 payloads)` As described below. In the output you have `onoff` it contains a boolean if the heater have to go on or off. If the hysteresis is active `onoff` is `null`:
+The node has 1 input with `(4 topic-payloads)` and 1 output `(object with 4 payloads)` As described below. In the output you have `onoff` it contains a boolean if the heater have to go on or off. If the hysteresis is active `onoff` is `null`:
 
 ## Input
-You have to set 3 payloads for success function:
+You have to set 4 payloads for success function:
 
+* topic: `switch`, payload: true/false, you can force to switch on or off the thermostat
 * topic: `target`, payload: target temperatur, e.g. `23`
 * topic: `current`, payload: current temperatur, e.g. `19` (comes from your thermometer)
 * topic: `hysteresis`, payload: target temperatur, e.g. `0.3`
@@ -27,6 +28,7 @@ You have to set 3 payloads for success function:
 The output is a object in the payload as following:
 
     {
+      switch: true | false,
       onoff: true | false | null,
       current: 19,
       target: 23,

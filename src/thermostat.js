@@ -24,6 +24,9 @@ module.exports = function (RED) {
       } else
       if (msg.topic === 'hysteresis') {
         node.context.set('hysteresis', msg.payload)
+      } else
+      if (msg.topic === 'switch') {
+        node.context.set('switch', msg.payload)
       }
 
       node.switch = node.context.get('switch')
@@ -41,7 +44,7 @@ module.exports = function (RED) {
       }
 
       this.status({ fill: statusColor, shape: 'dot', text: `Current: ${node.current}  Target: ${node.target} Hysteresis: ${node.hysteresis} Switch: ${node.switch}` })
-      msg = { payload: { onoff: result, current: node.current, target: node.target, hysteresis: node.hysteresis } }
+      msg = { payload: { onoff: result, switch: node.switch, current: node.current, target: node.target, hysteresis: node.hysteresis } }
       node.send(msg)
     })
   }
