@@ -2,7 +2,7 @@
   "name": "node-red-contrib-dynamic-thermostat",
   "version": "0.0.7",
   "description": "Dynamic Thermostat",
-  "author": "Denis Manteufel <denis.manteufel@gmail.com>",
+  "author": "Denis Manteufel <1503277+DenisMtfl@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
     "start": "nodemon /usr/lib/node_modules/node-red/red.js",
