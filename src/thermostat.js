@@ -16,7 +16,7 @@ module.exports = function (RED) {
       node.hysteresis = null
       node.switch = null
 
-      node.context.set('switch', true)
+      node.context.set('switch', null)
 
       if (msg.topic === 'target') {
         node.context.set('target', msg.payload)
@@ -42,10 +42,15 @@ module.exports = function (RED) {
 
       if (node.current !== undefined && node.target !== undefined && node.hysteresis !== undefined) {
         statusColor = 'green'
-        if (node.switch === false) {
-          result = Calc(node.current, node.target, node.hysteresis)
+        if (node.switch === true) {
+            // automatic switching disabled, always stay on
+            result = true
+        } else if(node.switch === false) {
+            // automatic switching disabled, always stay off
+            result = false
         } else {
-          result = true
+            // automatic switching enabled
+            result = Calc(node.current, node.target, node.hysteresis)
         }
       }
 
