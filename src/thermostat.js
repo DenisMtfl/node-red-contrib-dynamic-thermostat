@@ -43,14 +43,14 @@ module.exports = function (RED) {
       if (node.current !== undefined && node.target !== undefined && node.hysteresis !== undefined) {
         statusColor = 'green'
         if (node.switch === true) {
-            // automatic switching disabled, always stay on
-            result = true
-        } else if(node.switch === false) {
-            // automatic switching disabled, always stay off
-            result = false
+          // automatic switching disabled, always stay on
+          result = true
+        } else if (node.switch === false) {
+          // automatic switching disabled, always stay off
+          result = false
         } else {
-            // automatic switching enabled
-            result = Calc(node.current, node.target, node.hysteresis)
+          // automatic switching enabled
+          result = Calc(node.current, node.target, node.hysteresis)
         }
       }
 
