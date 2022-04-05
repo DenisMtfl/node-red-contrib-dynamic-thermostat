@@ -19,7 +19,7 @@ The node has 1 input with `(4 topic-payloads)` and 1 output `(object with 4 payl
 ## Input
 You have to set 4 payloads for success function:
 
-* topic: `switch`, payload: true/false, you can force to switch on or off the thermostat
+* topic: `switch`, payload: true/false/auto, you can force to switch the thermostat on or off, `"auto"` to return to automatic mode
 * topic: `target`, payload: target temperatur, e.g. `23`
 * topic: `current`, payload: current temperatur, e.g. `19` (comes from your thermometer)
 * topic: `hysteresis`, payload: target temperatur, e.g. `0.3`
