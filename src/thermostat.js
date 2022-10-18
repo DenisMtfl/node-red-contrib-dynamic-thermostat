@@ -14,7 +14,7 @@ module.exports = function (RED) {
       node.target = null
       node.current = null
       node.hysteresis = null
-      node.switch = null      
+      node.switch = null
 
       if (msg.topic === 'target') {
         node.context.set('target', msg.payload)
